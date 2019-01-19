@@ -12,11 +12,11 @@ namespace SuperDigital.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OperacaoController : ControllerBase
+    public class TransferenciaController : ControllerBase
     {
         private readonly IOperacaoFinanceiraServico _operacaoServico;
 
-        public OperacaoController(IOperacaoFinanceiraServico operacaoServico)
+        public TransferenciaController(IOperacaoFinanceiraServico operacaoServico)
         {
             _operacaoServico = operacaoServico;
         } 

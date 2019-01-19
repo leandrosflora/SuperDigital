@@ -12,6 +12,8 @@ namespace SuperDigital.Domain.Entidades
 
         protected decimal ValorTotal { get; set; }
 
+        public List<Lancamentos> Lancamentos { get; set; }
+
         public void Debitar(decimal valor)
         {
             this.ValorTotal -= valor;

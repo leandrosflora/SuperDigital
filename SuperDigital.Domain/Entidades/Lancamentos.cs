@@ -6,18 +6,19 @@ namespace SuperDigital.Domain.Entidades
 {
     public class Lancamentos
     {
+        public Lancamentos(int contaOrigem, int contaDestino, decimal valor)
+        {
+            ContaOrigem = ContaOrigem;
+            ContaDestino = contaDestino;
+            Valor = valor;
+        }
 
+        public long Id { get; set; }
 
-        public ContaCorrente ContaOrigem { get; set; }
+        public int ContaOrigem { get; set; }
 
-        public ContaCorrente ContaDestino { get; set; }
+        public int ContaDestino { get; set; }
 
         public decimal Valor { get; set; }
-
-        public void Transferir(ContaCorrente contaOrigem, ContaCorrente contaDestino, decimal valor)
-        {
-            contaOrigem.Debitar(valor);
-            ContaDestino.Creditar(valor);
-        }
     }
 }
