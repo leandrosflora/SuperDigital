@@ -7,7 +7,7 @@ namespace SuperDigital.Domain.Entidades
 {
     public class ContaCorrente : Conta
     {
-        private readonly decimal LimiteChequeEspecial = -500;
+        private readonly decimal LimiteChequeEspecial = -5000;
 
         public void Debitar(decimal valor)
         {
