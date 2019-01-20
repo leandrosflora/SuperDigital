@@ -22,9 +22,9 @@ namespace SuperDigital.WebApi.Controllers
         } 
 
         [HttpPost]
-        [ProducesResponseType(200)]
-        [ProducesResponseType(400)]
-        [ProducesResponseType(500)]
+        //[ProducesResponseType(200)]
+        //[ProducesResponseType(400)]
+        //[ProducesResponseType(500)]
         public HttpResponseMessage Post([FromBody] int contaOrigem, int contaDestino, decimal valor)
         {
             try

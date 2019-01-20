@@ -28,6 +28,9 @@ namespace SuperDigital.Domain
 
                 ContaCorrente destino = _contaRepositorio.Buscar(contaDestino);
 
+                if (origem == null || destino == null)
+                    throw new ArgumentNullException(ValidationResource.ContaNaoExistente);
+
                 origem.Debitar(valor);
 
                 origem.Lancamentos.Add(lancamento);

@@ -11,7 +11,6 @@ namespace SuperDigital.Domain.Entidades
 
         public void Debitar(decimal valor)
         {
-
             if (this.ValorTotal - valor >= -LimiteChequeEspecial)
             {
                 base.Debitar(valor);

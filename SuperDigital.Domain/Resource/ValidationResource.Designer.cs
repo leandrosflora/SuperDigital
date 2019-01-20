@@ -61,6 +61,15 @@ namespace SuperDigital.Domain.Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Conta não encontrada.
+        /// </summary>
+        internal static string ContaNaoExistente {
+            get {
+                return ResourceManager.GetString("ContaNaoExistente", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Limite cheque especial ultrapassado.
         /// </summary>
         internal static string LimiteUltrapassado {
