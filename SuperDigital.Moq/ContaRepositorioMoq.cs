@@ -17,7 +17,8 @@ namespace SuperDigital.Moq
             this.Conta = new ContaCorrente()
             {
                 Id = 123,
-                Numero = 10
+                Numero = 10,
+                Lancamentos = new List<Lancamentos>()
             };
 
             this.Mock.Setup(m => m.Salvar(It.IsAny<ContaCorrente>()));
@@ -27,7 +28,12 @@ namespace SuperDigital.Moq
 
         public ContaCorrente Buscar(int contaOrigem)
         {
-            return this.Mock.Object.Buscar(contaOrigem);
+            var conta = this.Mock.Object.Buscar(contaOrigem);
+
+            if (!conta.Numero.Equals(contaOrigem))
+                return null;
+
+            return conta;
         }
 
         public void Salvar(ContaCorrente origem)

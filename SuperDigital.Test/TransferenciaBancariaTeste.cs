@@ -1,6 +1,5 @@
 ﻿using SuperDigital.Domain;
-using SuperDigital.Domain.Interfaces.IRepositorios;
-using SuperDigital.Domain.Interfaces.IServicos;
+using SuperDigital.Domain.DTO;
 using SuperDigital.Moq;
 using System;
 using System.Collections.Generic;
@@ -14,30 +13,55 @@ namespace SuperDigital.Test
         private OperacaoFinanceiraServico servico;
         private ContaRepositorioMoq repositorio;
 
-        public void InicializarTestes()
+        private static readonly TransferenciaBancariaDTO DTO = new TransferenciaBancariaDTO()
+        {
+            contaDestino = 10,
+            ContaOrigem = 10,
+            Valor = 1000
+        };
+
+        public TransferenciaBancariaTeste()
         {
             this.repositorio = new ContaRepositorioMoq();
             this.servico = new OperacaoFinanceiraServico(repositorio);
         }
 
         [Fact]
-        public void VerificaContaDestinoExistente()
+        public void ValidaContaOrigemNaoExistente()
         {
+            try
+            {
+                TransferenciaBancariaDTO DTO = new TransferenciaBancariaDTO()
+                {
+                    contaDestino = 5,
+                    ContaOrigem = 100,
+                    Valor = 1000
+                };
 
+                var sucesso = this.servico.Transferir(DTO);
 
-            Assert.True(true);
+                Assert.False(sucesso);
+            }
+            catch (Exception e)
+            {
+                Assert.True(true);
+            }           
         }
 
         [Fact]
-        public void VerificaContaOrigemExistente()
+        public void ValidaContasExistentes()
         {
+            var sucesso = this.servico.Transferir(DTO);
 
+            Assert.True(sucesso);
         }
 
         [Fact]
         public void VerificaSaldoSuficienteContaOrigem()
         {
+            var sucesso = this.servico.Transferir(DTO);
 
+            Assert.True(sucesso);
         }
     }
 }
