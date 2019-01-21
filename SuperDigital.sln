@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperDigital.Common", "Supe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperDigital.Api", "SuperDigital.Api\SuperDigital.Api.csproj", "{DD34BFB7-2F3C-4914-B675-0000C17F022F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperDigital.Moq", "SuperDigital.Moq\SuperDigital.Moq.csproj", "{10F01F80-3E1B-48B9-BDF1-FE5BA8022C4D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{DD34BFB7-2F3C-4914-B675-0000C17F022F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD34BFB7-2F3C-4914-B675-0000C17F022F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD34BFB7-2F3C-4914-B675-0000C17F022F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10F01F80-3E1B-48B9-BDF1-FE5BA8022C4D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10F01F80-3E1B-48B9-BDF1-FE5BA8022C4D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10F01F80-3E1B-48B9-BDF1-FE5BA8022C4D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10F01F80-3E1B-48B9-BDF1-FE5BA8022C4D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{123743BC-A3CF-4464-BF92-9C7BFAF7D889} = {6C39AEB9-DF0C-4D8B-8DDC-4D11FF2232DC}
 		{09041494-9A15-4B46-9902-5939BA032A0E} = {0F50101C-F788-46E2-928A-44DEF9CA35C4}
 		{DD34BFB7-2F3C-4914-B675-0000C17F022F} = {C55AADB8-1A21-4589-ABDD-3CE678B57803}
+		{10F01F80-3E1B-48B9-BDF1-FE5BA8022C4D} = {0F50101C-F788-46E2-928A-44DEF9CA35C4}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {C815D8E3-B7A6-40A6-96ED-35C573A15128}
