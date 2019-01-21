@@ -10,14 +10,11 @@ namespace SuperDigital.Test
 {
     public class TransferenciaBancariaTeste
     {
+        private readonly IOperacaoFinanceiraServico _operacao; 
 
-        private OperacaoFinanceiraServico _operacao;
-        private readonly IContaRepositorio _contaRepositorio;
-
-        public TransferenciaBancariaTeste(IContaRepositorio contaRepositorio)
-        {
-            _contaRepositorio = contaRepositorio;
-            _operacao = new OperacaoFinanceiraServico(_contaRepositorio);
+        public TransferenciaBancariaTeste(IOperacaoFinanceiraServico operacao)
+        { 
+            _operacao = operacao;
         }
 
         [Fact]

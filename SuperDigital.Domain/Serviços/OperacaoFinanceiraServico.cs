@@ -1,4 +1,5 @@
 ﻿using SuperDigital.Common;
+using SuperDigital.Common.DTO;
 using SuperDigital.Domain.Entidades;
 using SuperDigital.Domain.Interfaces.IRepositorios;
 using SuperDigital.Domain.Interfaces.IServicos;
@@ -19,26 +20,26 @@ namespace SuperDigital.Domain
             _contaRepositorio = contaRepositorio;
         }
 
-        public bool Transferir(int contaOrigem, int contaDestino, decimal valor)
+        public bool Transferir(TransferenciaBancariaDTO dadosTransferencia)
         {
             try
             {
                 Transacao.ExecutarEmTransacao(() =>
                 {
-                    Lancamentos lancamento = new Lancamentos(contaOrigem, contaDestino, valor);
+                    Lancamentos lancamento = new Lancamentos(dadosTransferencia.ContaOrigem, dadosTransferencia.contaDestino, dadosTransferencia.Valor);
 
-                    ContaCorrente origem = _contaRepositorio.Buscar(contaOrigem);
+                    ContaCorrente origem = _contaRepositorio.Buscar(dadosTransferencia.ContaOrigem);
 
-                    ContaCorrente destino = _contaRepositorio.Buscar(contaDestino);
+                    ContaCorrente destino = _contaRepositorio.Buscar(dadosTransferencia.contaDestino);
 
                     if (origem == null || destino == null)
                         throw new ArgumentNullException(ValidationResource.ContaNaoExistente);
 
-                    origem.Debitar(valor);
+                    origem.Debitar(dadosTransferencia.Valor);
 
                     origem.Lancamentos.Add(lancamento);
 
-                    destino.Creditar(valor);
+                    destino.Creditar(dadosTransferencia.Valor);
 
                     _contaRepositorio.Salvar(origem);
 

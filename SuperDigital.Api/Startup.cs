@@ -6,8 +6,15 @@ using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Options;
+using SuperDigital.Common;
+using SuperDigital.Domain;
+using SuperDigital.Domain.Interfaces.IRepositorios;
+using SuperDigital.Domain.Interfaces.IServicos;
+using SuperDigital.Infra;
 using Swashbuckle.AspNetCore.Swagger;
 using System;
+using System.IO;
+using System.Reflection;
 
 namespace SuperDigital.Api
 {
@@ -33,7 +40,9 @@ namespace SuperDigital.Api
                     .AllowCredentials());
             });
 
-
+            services.AddScoped<FabricaConexao, FabricaConexao>();
+            services.AddScoped<IOperacaoFinanceiraServico, OperacaoFinanceiraServico>();
+            services.AddScoped<IContaRepositorio, ContaRepositorio>();
 
             services.AddMvc();
 
@@ -52,6 +61,11 @@ namespace SuperDigital.Api
                              Url = "http://leandroflora.com/"
                          }
                      });
+
+                // Set the comments path for the Swagger JSON and UI.
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
 
             services.ConfigureSwaggerGen(options =>
