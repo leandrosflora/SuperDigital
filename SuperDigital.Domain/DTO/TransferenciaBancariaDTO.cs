@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace SuperDigital.Common.DTO
+namespace SuperDigital.Domain.DTO
 {
     public class TransferenciaBancariaDTO
     {

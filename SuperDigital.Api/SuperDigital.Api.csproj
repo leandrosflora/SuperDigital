@@ -24,7 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\SuperDigital.Common\SuperDigital.Common.csproj" />
     <ProjectReference Include="..\SuperDigital.Domain\SuperDigital.Domain.csproj" />
     <ProjectReference Include="..\SuperDigital.Infra\SuperDigital.Infra.csproj" />
   </ItemGroup>

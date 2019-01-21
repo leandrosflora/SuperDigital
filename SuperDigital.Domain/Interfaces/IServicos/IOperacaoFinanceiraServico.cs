@@ -1,4 +1,4 @@
-﻿using SuperDigital.Common.DTO;
+﻿using SuperDigital.Domain.DTO;
 using System;
 using System.Collections.Generic;
 using System.Text;

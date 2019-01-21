@@ -1,13 +1,10 @@
 ﻿using SuperDigital.Common;
-using SuperDigital.Common.DTO;
+using SuperDigital.Domain.DTO;
 using SuperDigital.Domain.Entidades;
 using SuperDigital.Domain.Interfaces.IRepositorios;
 using SuperDigital.Domain.Interfaces.IServicos;
 using SuperDigital.Domain.Resource;
 using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SuperDigital.Domain
 {

@@ -15,18 +15,17 @@ namespace SuperDigital.Infra
         {
         }
 
-        public ContaCorrente Buscar(int contaOrigem)
+        public ContaCorrente Buscar(int conta)
         {
             DynamicParameters parametros = new DynamicParameters();
-            parametros.Add("@id", contaOrigem, DbType.Int64);
+            parametros.Add("@numeroConta", conta, DbType.Int32);
 
             using (IDbConnection conexao = this.FabricaConexao.CriarConexao())
             {
                 return conexao.QueryFirstOrDefault<ContaCorrente>(@"
                     SELECT *
-                    FROM  ArquivoUpload AS td JOIN ArquivoAnexado AS aa
-                            ON td.IdArquivoAnexado = aa.Id
-                    WHERE td.Id = @id", parametros);
+                    FROM  Conta 
+                    WHERE Numero = @numeroConta", parametros);
             }
         }
 

@@ -1,12 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using SuperDigital.Common.DTO;
+using SuperDigital.Domain.DTO;
 using SuperDigital.Domain.Interfaces.IServicos;
 
 namespace SuperDigital.Api.Controllers
