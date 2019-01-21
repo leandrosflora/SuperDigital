@@ -1,4 +1,5 @@
-﻿using SuperDigital.Domain.Entidades;
+﻿using SuperDigital.Common;
+using SuperDigital.Domain.Entidades;
 using SuperDigital.Domain.Interfaces.IRepositorios;
 using SuperDigital.Domain.Interfaces.IServicos;
 using SuperDigital.Domain.Resource;
@@ -22,24 +23,27 @@ namespace SuperDigital.Domain
         {
             try
             {
-                Lancamentos lancamento = new Lancamentos(contaOrigem, contaDestino, valor);
+                Transacao.ExecutarEmTransacao(() =>
+                {
+                    Lancamentos lancamento = new Lancamentos(contaOrigem, contaDestino, valor);
 
-                ContaCorrente origem = _contaRepositorio.Buscar(contaOrigem);
+                    ContaCorrente origem = _contaRepositorio.Buscar(contaOrigem);
 
-                ContaCorrente destino = _contaRepositorio.Buscar(contaDestino);
+                    ContaCorrente destino = _contaRepositorio.Buscar(contaDestino);
 
-                if (origem == null || destino == null)
-                    throw new ArgumentNullException(ValidationResource.ContaNaoExistente);
+                    if (origem == null || destino == null)
+                        throw new ArgumentNullException(ValidationResource.ContaNaoExistente);
 
-                origem.Debitar(valor);
+                    origem.Debitar(valor);
 
-                origem.Lancamentos.Add(lancamento);
+                    origem.Lancamentos.Add(lancamento);
 
-                destino.Creditar(valor);
+                    destino.Creditar(valor);
 
-                _contaRepositorio.Salvar(origem);
+                    _contaRepositorio.Salvar(origem);
 
-                _contaRepositorio.Salvar(destino);
+                    _contaRepositorio.Salvar(destino);
+                });
 
                 return true;
             }
