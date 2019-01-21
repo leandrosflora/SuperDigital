@@ -36,17 +36,6 @@ namespace SuperDigital.Api
 
 
             services.AddMvc();
-            //services.AddMvcCore().AddVersionedApiExplorer(c =>
-            //{
-            //    c.GroupNameFormat = "'v'VVV";
-            //    c.SubstituteApiVersionInUrl = true;
-            //});
-
-            //services.AddApiVersioning(setup => {
-            //    setup.ReportApiVersions = true;
-            //    setup.AssumeDefaultVersionWhenUnspecified = true;
-            //    setup.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(0, 1);
-            //});
 
             // Register the Swagger generator, defining one or more Swagger documents
             services.AddSwaggerGen(c =>
@@ -60,16 +49,13 @@ namespace SuperDigital.Api
                          Contact = new Contact
                          {
                              Name = "Leandro Flora",
-                             Url = "https://github.com/leandroflora"
+                             Url = "http://leandroflora.com/"
                          }
                      });
             });
 
             services.ConfigureSwaggerGen(options =>
             {
-                //Register the file operation for upload
-                //options.OperationFilter<FormFileOperationFilter>();
-
                 options.DescribeAllEnumsAsStrings();
             });
         }
@@ -89,7 +75,7 @@ namespace SuperDigital.Api
             app.UseSwaggerUI(c =>
             {
 
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Super Digital");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
             });
 
             app.UseCors("CorsPolicy");
