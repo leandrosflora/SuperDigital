@@ -17,16 +17,23 @@ namespace SuperDigital.Infra
 
         public ContaCorrente Buscar(int conta)
         {
-            DynamicParameters parametros = new DynamicParameters();
-            parametros.Add("@numeroConta", conta, DbType.Int32);
+            //DynamicParameters parametros = new DynamicParameters();
+            //parametros.Add("@numeroConta", conta, DbType.Int32);
 
-            using (IDbConnection conexao = this.FabricaConexao.CriarConexao())
+            //using (IDbConnection conexao = this.FabricaConexao.CriarConexao())
+            //{
+            //    return conexao.QueryFirstOrDefault<ContaCorrente>(@"
+            //        SELECT *
+            //        FROM  Conta 
+            //        WHERE Numero = @numeroConta", parametros);
+            //}
+
+            return new ContaCorrente()
             {
-                return conexao.QueryFirstOrDefault<ContaCorrente>(@"
-                    SELECT *
-                    FROM  Conta 
-                    WHERE Numero = @numeroConta", parametros);
-            }
+                Id = 1,
+                Numero = 5,
+                Lancamentos = new List<Lancamentos>()
+            };
         }
 
         public void Salvar(ContaCorrente origem)

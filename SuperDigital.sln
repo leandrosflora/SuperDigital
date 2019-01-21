@@ -23,6 +23,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperDigital.Api", "SuperDi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperDigital.Moq", "SuperDigital.Moq\SuperDigital.Moq.csproj", "{10F01F80-3E1B-48B9-BDF1-FE5BA8022C4D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DEC60227-EE16-43C4-AF8B-D192BD0259F8}"
+	ProjectSection(SolutionItems) = preProject
+		Respostas.txt = Respostas.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
