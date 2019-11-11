@@ -31,12 +31,13 @@ namespace SuperDigital.Api.Controllers
         {
             try
             {
-                var sucesso = _operacaoServico.Transferir(dadosTransferencia);
+                //var sucesso = _operacaoServico.Transferir(dadosTransferencia);
 
-                if (sucesso)
-                    return new HttpResponseMessage(HttpStatusCode.OK);
-                else
-                    return new HttpResponseMessage(HttpStatusCode.BadRequest);
+                return new HttpResponseMessage(HttpStatusCode.OK);
+                //if (sucesso)
+                //    return new HttpResponseMessage(HttpStatusCode.OK);
+                //else
+                //    return new HttpResponseMessage(HttpStatusCode.BadRequest);
             }
             catch (Exception)
             {
