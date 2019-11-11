@@ -45,6 +45,7 @@ namespace SuperDigital.Api.Controllers
             }
         }
 
+
         [HttpGet]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
