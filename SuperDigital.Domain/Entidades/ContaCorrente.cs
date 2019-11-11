@@ -9,7 +9,7 @@ namespace SuperDigital.Domain.Entidades
     {
         private readonly decimal LimiteChequeEspecial = 5000;
 
-        public void Debitar(decimal valor)
+        public new void Debitar(decimal valor)
         {
             if (this.ValorTotal - valor >= -LimiteChequeEspecial)
             {
@@ -21,7 +21,7 @@ namespace SuperDigital.Domain.Entidades
             }
         }
 
-        public void Creditar(decimal valor)
+        public new void Creditar(decimal valor)
         {
             this.ValorTotal += valor;
         }

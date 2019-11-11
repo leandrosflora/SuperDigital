@@ -42,7 +42,7 @@ namespace SuperDigital.Test
 
                 Assert.False(sucesso);
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 Assert.True(true);
             }           
