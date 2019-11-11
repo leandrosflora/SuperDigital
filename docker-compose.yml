@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  plataformadeprodutividade:
+    image: plataformadeprodutividade
+    build:
+      context: .
+      dockerfile: PlataformaDeProdutividade\Dockerfile
