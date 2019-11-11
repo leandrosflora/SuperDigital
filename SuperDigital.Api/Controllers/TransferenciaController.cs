@@ -31,9 +31,9 @@ namespace SuperDigital.Api.Controllers
         {
             try
             {
-                //var sucesso = _operacaoServico.Transferir(dadosTransferencia);
-
                 return new HttpResponseMessage(HttpStatusCode.OK);
+
+                //var sucesso = _operacaoServico.Transferir(dadosTransferencia); 
                 //if (sucesso)
                 //    return new HttpResponseMessage(HttpStatusCode.OK);
                 //else
@@ -43,6 +43,15 @@ namespace SuperDigital.Api.Controllers
             {
                 return new HttpResponseMessage(HttpStatusCode.InternalServerError);
             }
+        }
+
+        [HttpGet]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(500)]
+        public HttpResponseMessage Get()
+        {
+            return new HttpResponseMessage(HttpStatusCode.OK); 
         }
     }
 }
