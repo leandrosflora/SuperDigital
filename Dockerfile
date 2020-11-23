@@ -4,7 +4,7 @@ EXPOSE 80
 
 FROM microsoft/aspnetcore-build:2.0 AS build
 WORKDIR /src
-COPY ["SuperDigital/SuperDigital.Api.csproj", "SuperDigital/"]
+COPY ["SuperDigital/SuperDigital.Api.csproj", "SuperDigital/SuperDigital.Api/"]
 RUN dotnet restore "SuperDigital/SuperDigital.Api/SuperDigital.Api.csproj"
 COPY . .
 WORKDIR "/src/SuperDigital/SuperDigital.Api"
