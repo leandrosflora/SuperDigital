@@ -2,11 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <UserSecretsId>4a487d2b-4993-468f-ab8b-b1a195534a71</UserSecretsId>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile></DocumentationFile>
+    <DocumentationFile>bin\Debug\netcoreapp2.0\SuperDigital.Api.xml</DocumentationFile>
     <OutputPath>bin\Debug\netcoreapp2.0\</OutputPath>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>C:\Users\1513 X-MXTI\Desktop\SuperDigital\SuperDigital.Api\SuperDigital.Api.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

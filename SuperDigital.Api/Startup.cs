@@ -70,6 +70,9 @@ namespace SuperDigital.Api
             {
                 options.DescribeAllEnumsAsStrings();
             });
+
+
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

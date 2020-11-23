@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SuperDigital.Api</name>
+    </assembly>
+    <members>
+        <member name="M:SuperDigital.Api.Controllers.TransferenciaController.Post(SuperDigital.Domain.DTO.TransferenciaBancariaDTO)">
+            <summary>
+            Efetua a Transferência entre contas correntes
+            </summary>
+            <param name="dadosTransferencia"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
