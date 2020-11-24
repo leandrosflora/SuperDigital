@@ -19,8 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SuperDigital.Api", "SuperDi
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DEC60227-EE16-43C4-AF8B-D192BD0259F8}"
 	ProjectSection(SolutionItems) = preProject
+		deployment.yaml = deployment.yaml
 		Dockerfile = Dockerfile
 		Respostas.txt = Respostas.txt
+		service.yaml = service.yaml
 		superdigitalapi.PublishSettings = superdigitalapi.PublishSettings
 	EndProjectSection
 EndProject
